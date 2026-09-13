@@ -1,0 +1,13 @@
+# Core dependencies for Project Notes Task Management App
+
+# GUI Framework
+PyQt6>=6.4.0
+
+# Image processing for notes attachments
+Pillow>=9.0.0
+
+# Cross-platform process management (recommended for better database locking)
+psutil>=5.8.0
+
+# Note: sqlite3 is included with Python standard library
+# Note: All other imports (os, sys, re, datetime, etc.) are Python standard library
