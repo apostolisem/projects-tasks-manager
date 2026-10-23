@@ -1,0 +1,195 @@
+/* Project Notes — base QSS. Tokens: see tokens.py. Fonts must be registered via QFontDatabase first (ui/theme.py).
+   Qt style sheets do not support letter-spacing or text-transform; ui.theme.heading_font() applies tracking and the
+   code uppercases section labels. */
+QWidget{font-family:"Barlow";font-size:14px;color:#1d1f20;background:#f2f2f3}
+QMainWindow,QDialog{background:#f2f2f3}
+QToolTip{background:#1d2d3d;color:#f2f2f3;border:0;padding:4px 8px;font-size:12px}
+
+/* panes */
+#TopBar{border-bottom:1px solid #d6d6d7}
+#Sidebar,#Sidebar QWidget{background:#ececed}
+#StatusBar,QStatusBar{background:#f2f2f3;border-top:1px solid #d6d6d7;color:#5d5d60;font-size:12px}
+QSplitter::handle{background:#d6d6d7}
+QSplitter::handle:horizontal{width:1px}
+QSplitter::handle:hover{background:#5980a6}
+
+/* labels */
+QLabel#SectionLabel{font-family:"Barlow Condensed";font-weight:600;font-size:12px;color:#5d5d60;padding:14px 8px 3px}
+QLabel#ReviewLabel{font-family:"Barlow Condensed";font-weight:600;font-size:12px;color:#416180;padding:2px 8px 3px}
+QLabel#DialogTitle{font-family:"Barlow Condensed";font-weight:600;font-size:22px;color:#1d1f20}
+QLabel#ListTitle{font-family:"Barlow Condensed";font-weight:600;font-size:26px}
+QLabel#Subtitle,QLabel#Crumb{color:#5d5d60;font-size:13px}
+QLabel#Kicker{font-size:10px;font-weight:500;color:#416180}
+QLabel#Brand{font-family:"Barlow Condensed";font-weight:600;font-size:19px}
+QLabel#Kbd{font-size:10.5px;padding:1px 5px;border:1px solid #d6d6d7;background:#f5f5f8;color:#5d5d60}
+
+/* buttons */
+QPushButton,QToolButton{font-family:"Barlow Condensed";font-weight:600;font-size:14px;border:1px solid #d6d6d7;border-radius:0;padding:6px 12px;background:transparent;color:#424244}
+QPushButton:hover,QToolButton:hover{background:#e3e3e4}
+QPushButton:pressed,QToolButton:pressed{background:#d5d5d6}
+QPushButton:checked,QToolButton:checked{background:#d6ebff;border-color:#94bce3;color:#1d2d3d}
+QPushButton:disabled,QToolButton:disabled{color:rgba(29,31,32,.45)}
+QPushButton:focus,QToolButton:focus{outline:none}
+QPushButton[primary="true"]{background:#5980a6;border-color:#5980a6;color:#f2f2f3}
+QPushButton[primary="true"]:hover{background:#597ea3}
+QPushButton[primary="true"]:pressed{background:#416180}
+QToolButton[icon-only="true"]{padding:0;min-width:30px;min-height:30px}
+QToolButton[flat="true"]{border:0}
+QToolButton[flat="true"]:hover{background:rgba(89,128,166,.12)}
+
+/* inputs */
+QLineEdit,QSpinBox,QDoubleSpinBox,QDateEdit,QComboBox,QTextEdit,QPlainTextEdit{background:#e9e9ea;border:1px solid #d6d6d7;border-radius:0;padding:6px 10px;selection-background-color:#b8cadb;selection-color:#1d1f20}
+QLineEdit:hover,QComboBox:hover,QDateEdit:hover{border-color:#8e8f90}
+QLineEdit:focus,QSpinBox:focus,QDoubleSpinBox:focus,QDateEdit:focus,QComboBox:focus,QTextEdit:focus{border-color:#5980a6}
+QLineEdit#Search{background:#f2f2f3;padding-left:34px;padding-right:60px;min-height:24px}
+QToolButton#SearchDoneToggle{font-family:"Barlow";font-weight:500;font-size:12px;border:1px solid #d6d6d7;background:transparent;color:#5b5b5e;padding:1px 7px 1px 5px}
+QToolButton#SearchDoneToggle:hover{background:#e3e3e4}
+QToolButton#SearchDoneToggle:checked{background:#d6ebff;border-color:#94bce3;color:#1d2d3d}
+QLineEdit#QuickAdd{border:0;background:transparent;padding:9px 0}
+#QuickAddFrame{border:1px solid #d6d6d7}
+#ReviewPanel{background:#eef6ff;border:1px solid #94bce3;margin:0 14px 8px 14px}
+#ReviewPanel QLabel{background:transparent}
+QLabel#ReviewKicker{color:#416180}
+QLabel#ReviewMuted{color:#5d5d60}
+QLabel#ReviewCount{color:#1d1f20}
+QToolButton#ReviewChip{border:1px solid #94bce3;background:#d6ebff;color:#1d2d3d;padding:2px 8px;border-radius:0}
+QToolButton#ReviewChip:hover{background:#b5d9fd}
+QToolButton#QuickAddTarget{border:1px solid #d6d6d7;background:#e9e9ea;color:#424244;padding:2px 7px;border-radius:0}
+QToolButton#QuickAddTarget:hover{background:#dcdcdd}
+#QuickAddFrame[focused="true"]{border-color:#5980a6;background:#eef6ff}
+/* borderless property fields in detail grid */
+#PropGrid QLineEdit,#PropGrid QDateEdit,#PropGrid QDoubleSpinBox,#PropGrid QComboBox{background:transparent;border:1px solid transparent;padding:3px 4px;min-height:22px}
+#PropGrid QLineEdit:hover,#PropGrid QDateEdit:hover,#PropGrid QDoubleSpinBox:hover,#PropGrid QComboBox:hover{border-color:#d6d6d7}
+#PropGrid QLineEdit:focus,#PropGrid QDateEdit:focus,#PropGrid QDoubleSpinBox:focus,#PropGrid QComboBox:focus{border-color:#5980a6;background:#f2f2f3}
+QTextEdit#TaskTitle{font-family:"Barlow";font-weight:600;font-size:25px;background:transparent;border:0;border-bottom:1px solid transparent;padding:2px 0}
+QTextEdit#TaskTitle:hover{border-bottom-color:#d6d6d7}
+QTextEdit#TaskTitle:focus{border-bottom-color:#5980a6}
+#NotesFrame{border:1px solid #d6d6d7}
+#NotesFrame[focused="true"]{border-color:#94bce3}
+#NotesToolbar{border-bottom:1px solid #d6d6d7;padding:4px 6px}
+QTextEdit#NotesEditor{background:transparent;border:0;padding:14px 20px;font-size:15px}
+
+/* lists */
+QListView,QTreeView{background:transparent;border:0;outline:0}
+QListView#Sidebar::item{padding:6px 8px;color:#2b2b2d}
+QListView#Sidebar::item:hover{background:#e3e3e4}
+QListView#Sidebar::item:selected{background:#d6ebff;color:#1d2d3d}
+/* Task rows are painted by TaskRowDelegate — see README "Task row" */
+
+/* segmented control (Auto | Manual) */
+QPushButton[seg="true"]{font-family:"Barlow";font-weight:400;font-size:12.5px;padding:5px 10px;border:1px solid #d6d6d7}
+QPushButton[seg="true"]:checked{background:#5980a6;border-color:#5980a6;color:#f2f2f3}
+
+/* menus */
+QMenu{background:#f2f2f3;border:1px solid #d6d6d7;padding:4px;font-size:13.5px}
+QMenu::item{padding:7px 24px 7px 30px;color:#1d1f20}
+QMenu::item:selected{background:#eef6ff;color:#1d2d3d}
+QMenu::separator{height:1px;background:#d6d6d7;margin:4px 0}
+QMenu::icon{padding-left:9px}
+
+/* scrollbars */
+QScrollBar:vertical{background:transparent;width:10px;margin:0}
+QScrollBar::handle:vertical{background:#c9c9cb;min-height:30px;margin:2px}
+QScrollBar::handle:vertical:hover{background:#98989b}
+QScrollBar::add-line,QScrollBar::sub-line{height:0}
+QScrollBar::add-page,QScrollBar::sub-page{background:transparent}
+
+/* toast */
+#Toast{background:#1d2d3d;color:#f2f2f3;font-size:14px}
+#Toast QLabel{background:transparent;color:#f2f2f3}
+#Toast QPushButton{border:0;background:transparent;color:#b5d9fd;padding:2px 6px}
+#Toast QPushButton:hover{background:rgba(242,242,243,.12)}
+
+/* chips */
+#Chip{background:#eef6ff;color:#2c455d;font-size:12.5px;padding:2px 4px 2px 8px}
+#Chip QToolButton{border:0;color:#2c455d;min-width:16px;min-height:16px;padding:0}
+#Chip QToolButton:hover{background:#b5d9fd}
+
+/* ---- extensions to the handoff sheet ---- */
+QLabel,QCheckBox,QRadioButton{background:transparent}
+
+/* menu bar */
+QMenuBar{background:#f2f2f3;border-bottom:1px solid #d6d6d7;padding:2px 7px;font-size:13.5px}
+QMenuBar::item{background:transparent;padding:5px 10px;color:#424244}
+QMenuBar::item:selected,QMenuBar::item:pressed{background:#eef6ff;color:#1d2d3d}
+QMenu::item:disabled{color:#98989b}
+QMenu::indicator{width:14px;height:14px;left:9px}
+QMenu::indicator:checked{background:#5980a6;border:1px solid #5980a6}
+QMenu::indicator:unchecked{border:1px solid #98989b}
+
+/* toolbars */
+QToolBar{background:#f2f2f3;border:0;border-bottom:1px solid #d6d6d7;padding:7px 14px;spacing:7px}
+QToolBar::separator{width:1px;background:#d6d6d7;margin:4px 3px}
+QToolBar QToolButton{border:1px solid transparent;padding:5px 9px}
+QToolBar QToolButton:hover{background:#e3e3e4}
+QToolBar QToolButton:pressed{background:#d5d5d6}
+
+/* tables and headers */
+QTableView{background:transparent;border:0;outline:0;gridline-color:transparent;selection-background-color:#eef6ff;selection-color:#1d1f20;alternate-background-color:#ececed}
+QTableView::item{padding:0 4px}
+QHeaderView{background:transparent;border:0}
+QHeaderView::section{font-family:"Barlow Condensed";font-weight:600;font-size:12px;color:#5d5d60;background:transparent;border:0;border-bottom:1px solid #d6d6d7;padding:6px 8px}
+QTableCornerButton::section{background:transparent;border:0}
+QListView::item:selected,QTreeView::item:selected{background:#d6ebff;color:#1d2d3d}
+
+/* check boxes and radio buttons */
+QCheckBox,QRadioButton{spacing:7px}
+QCheckBox::indicator,QRadioButton::indicator,QGroupBox::indicator,QListView::indicator,QTableView::indicator,QTreeView::indicator{width:16px;height:16px;border:1px solid #98989b;background:transparent}
+QCheckBox::indicator:hover,QRadioButton::indicator:hover,QGroupBox::indicator:hover{border-color:#5980a6;background:#eef6ff}
+QCheckBox::indicator:checked,QRadioButton::indicator:checked,QGroupBox::indicator:checked,QListView::indicator:checked,QTableView::indicator:checked,QTreeView::indicator:checked{background:#5980a6;border-color:#5980a6}
+QCheckBox::indicator:disabled,QRadioButton::indicator:disabled{border-color:#b7b7ba}
+
+/* combo boxes, spin boxes, date edits */
+QComboBox::drop-down,QDateEdit::drop-down{border:0;width:22px}
+QComboBox QAbstractItemView{background:#f2f2f3;border:1px solid #d6d6d7;selection-background-color:#eef6ff;selection-color:#1d2d3d;outline:0}
+QSpinBox::up-button,QSpinBox::down-button,QDoubleSpinBox::up-button,QDoubleSpinBox::down-button,QDateEdit::up-button,QDateEdit::down-button,QTimeEdit::up-button,QTimeEdit::down-button{border:0;width:16px;background:transparent}
+QTimeEdit{background:#e9e9ea;border:1px solid #d6d6d7;padding:6px 10px}
+QTimeEdit:focus{border-color:#5980a6}
+
+/* group boxes and tabs */
+QGroupBox{border:1px solid #d6d6d7;margin-top:14px;padding:14px 10px 10px}
+QGroupBox::title{subcontrol-origin:margin;left:10px;padding:0 4px;font-family:"Barlow Condensed";font-weight:600;font-size:12px;color:#5d5d60}
+QTabWidget::pane{border:1px solid #d6d6d7}
+QTabBar::tab{background:transparent;border:1px solid transparent;padding:6px 12px;color:#5d5d60}
+QTabBar::tab:selected{border-color:#d6d6d7;border-bottom-color:#f2f2f3;color:#1d1f20}
+
+/* horizontal scrollbar and status bar items */
+QScrollBar:horizontal{background:transparent;height:10px;margin:0}
+QScrollBar::handle:horizontal{background:#c9c9cb;min-width:30px;margin:2px}
+QScrollBar::handle:horizontal:hover{background:#98989b}
+QScrollBar::add-line:horizontal,QScrollBar::sub-line:horizontal{width:0}
+QStatusBar::item{border:0}
+
+/* calendar popup */
+QCalendarWidget QWidget{alternate-background-color:#ececed}
+QCalendarWidget QAbstractItemView{selection-background-color:#5980a6;selection-color:#f2f2f3}
+
+/* Compact task details: quiet flags and explicit editing affordances. */
+QPushButton#ProjectLink{text-align:left;border:0;background:transparent;color:#456b90;padding:3px 0}
+QPushButton#ProjectLink:hover,QPushButton#ProjectLink:focus{text-decoration:underline;color:#234c73}
+QPushButton#TaskFlag{font-family:"Barlow";background:transparent;border:1px solid transparent;padding:4px 8px}
+QPushButton#TaskFlag:hover,QPushButton#TaskFlag:focus{background:#e3e3e4;border-color:#94bce3}
+QPushButton#TaskFlag:checked{background:#d6ebff;border-color:#94bce3;color:#234c73}
+QPushButton#PropertySummary{font-size:12.5px;border:1px solid #d6d6d7;padding:4px 8px;background:transparent}
+QPushButton#PropertySummary:hover,QPushButton#PropertySummary:focus{background:#e5eff8;border-color:#5980a6}
+QFrame#PropertyEditor{border:1px solid #d6d6d7;background:transparent}
+QFrame#Chip:focus{border:2px solid #5980a6}
+QToolBar#NotesToolbar QToolButton{padding:4px;border:1px solid transparent}
+QToolBar#NotesToolbar QToolButton:hover,QToolBar#NotesToolbar QToolButton:focus{background:#e5eff8;border-color:#5980a6}
+QToolBar#NotesToolbar QToolButton:checked{background:#d6ebff;border-color:#94bce3}
+
+QPushButton#ProjectLink,QPushButton#PropertySummary,QPushButton#TaskFlag{font-family:"Barlow";font-weight:400}
+QToolBar#NotesToolbar QToolButton{font-family:"Barlow";font-weight:400;font-size:13px}
+
+/* Detail header and property rhythm. */
+QPushButton#TaskComplete{font-family:"Barlow";font-size:13px;font-weight:600;padding:0 10px}
+QPushButton#TaskFlag{font-size:13px;padding:0 10px;border-color:#d6d6d7;background:transparent}
+QPushButton#TaskFlag:checked{background:#d6ebff;border-color:#94bce3;color:#234c73}
+QToolButton#HeaderUtility{background:transparent;border:1px solid #d6d6d7;padding:0}
+QToolButton#HeaderUtility:hover,QToolButton#HeaderUtility:focus{background:#e5eff8;border-color:#5980a6}
+QPushButton#PropertySummary{padding:0 26px 0 10px;background:#eceef0;border:1px solid #d6d6d7;font-size:13px}
+QPushButton#PropertySummary::menu-indicator{image:none;width:0}
+QToolBar#NotesToolbar QToolButton{min-height:24px;padding:3px 6px}
+QToolBar#NotesToolbar QToolButton#FormattingMenu{padding:0 22px 0 10px}
+QToolButton#FormattingMenu::menu-indicator{subcontrol-origin:padding;subcontrol-position:right center;right:6px;width:8px;height:8px}
+QToolBar#NotesToolbar::separator{background:#dedee0;width:1px;margin:9px 6px}
